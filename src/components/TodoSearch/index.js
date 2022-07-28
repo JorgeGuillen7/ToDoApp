@@ -10,7 +10,7 @@ function TodoSearch({ search, setSearch }) {
         <div className='col col-sm-8 col-md-6 px-4 mb-4 m-auto justify-content-center '>
             <input
                 className='form-control bg-blue'
-                placeholder='New Task'
+                placeholder='Search...'
                 value={search}
                 onChange={onSearchValueChange}
             />
