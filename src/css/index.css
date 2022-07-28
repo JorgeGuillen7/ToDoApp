@@ -2,8 +2,37 @@ body {
     background-color: rgba(42, 138, 234, 0.175);
 }
 
-.transparent {
-    background-color: transparent;
+.checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #08429875;
+    border-radius: 0.25rem;
+}
+
+.checkbox:hover {
+    cursor: pointer;
+    box-shadow: 0 0 4px #084298a7;
+}
+
+.checkbox-icon {
+    font-size: 15px;
+    color: transparent;
+}
+
+.checkbox-icon:hover {
+    color: #cfe2ff;
+}
+
+.checked {
+    background-color: #084298;
+    border-color: #084298;
+}
+
+.checked-icon {
+    color: #bacbe6;
 }
 
 .bg-blue {
