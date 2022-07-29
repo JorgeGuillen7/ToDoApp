@@ -7,37 +7,30 @@ import { TodoItem } from "../components/TodoItem";
 import { CreateTodoButton } from "../components/CreateTodoButton";
 
 function AppUI() {
+    const { loading, error, searchedTodos, completeTodo, deleteTodo } =
+        React.useContext(TodoContext);
+
     return (
         <React.Fragment>
             <TodoCounter />
             <TodoSearch />
-            <TodoContext.Consumer>
-                {({
-                    loading,
-                    error,
-                    searchedTodos,
-                    completeTodo,
-                    deleteTodo,
-                }) => (
-                    <TodoList>
-                        {error && <p className='text-blue'>Error: {error}</p>}
-                        {loading && <p className='text-blue'>Loading...</p>}
-                        {!loading && !searchedTodos.length && (
-                            <p className='text-blue'>¡Crea tu primer TODO!</p>
-                        )}
-
-                        {searchedTodos.map((todo) => (
-                            <TodoItem
-                                key={todo.text}
-                                text={todo.text}
-                                completed={todo.completed}
-                                completeTodo={() => completeTodo(todo.text)}
-                                deleteTodo={() => deleteTodo(todo.text)}
-                            />
-                        ))}
-                    </TodoList>
+            <TodoList>
+                {error && <p className='text-blue'>Error: {error}</p>}
+                {loading && <p className='text-blue'>Loading...</p>}
+                {!loading && !searchedTodos.length && (
+                    <p className='text-blue'>¡Crea tu primer TODO!</p>
                 )}
-            </TodoContext.Consumer>
+
+                {searchedTodos.map((todo) => (
+                    <TodoItem
+                        key={todo.text}
+                        text={todo.text}
+                        completed={todo.completed}
+                        completeTodo={() => completeTodo(todo.text)}
+                        deleteTodo={() => deleteTodo(todo.text)}
+                    />
+                ))}
+            </TodoList>
             <CreateTodoButton />
         </React.Fragment>
     );
