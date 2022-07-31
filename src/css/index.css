@@ -158,6 +158,21 @@ body {
     animation-delay: 0.4s;
 }
 
+.msg-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 10px;
+    margin: 0 auto;
+    color: var(--blue-dark);
+}
+
+.msg-img {
+    font-size: 5rem;
+}
+
 @keyframes loading-dot {
     0%,
     100% {
