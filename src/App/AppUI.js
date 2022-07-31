@@ -7,6 +7,7 @@ import { TodoItem } from "../components/TodoItem";
 import { CreateTodoButton } from "../components/CreateTodoButton";
 import { Modal } from "../components/Modal";
 import { TodoForm } from "../components/TodoForm";
+import { TodoLoading } from "../components/TodoLoading";
 
 function AppUI() {
     const {
@@ -24,8 +25,8 @@ function AppUI() {
             <TodoCounter />
             <TodoSearch />
             <TodoList>
-                {error && <p className='text-blue'>Error: {error}</p>}
-                {loading && <p className='text-blue'>Loading...</p>}
+                {error && <p className='text-blue'> Error: {error} </p>}
+                {loading && <TodoLoading />}
                 {!loading && !searchedTodos.length && (
                     <p className='text-blue'>¡Crea tu primer TODO!</p>
                 )}

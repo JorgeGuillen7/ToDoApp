@@ -133,3 +133,39 @@ body {
     color: var(--blue-dark);
     box-shadow: 0 0 5px rgba(8, 66, 152, 0.5);
 }
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    height: 100px;
+}
+
+.loading-dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--blue-dark);
+    animation: loading-dot 2s ease-in-out infinite;
+}
+
+.loading-dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loading-dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes loading-dot {
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
