@@ -173,6 +173,10 @@ body {
     font-size: 5rem;
 }
 
+.msg-container span:hover {
+    cursor: pointer;
+}
+
 @keyframes loading-dot {
     0%,
     100% {

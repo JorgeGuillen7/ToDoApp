@@ -9,6 +9,7 @@ import { Modal } from "../components/Modal";
 import { TodoForm } from "../components/TodoForm";
 import { TodoLoading } from "../components/TodoLoading";
 import { TodoError } from "../components/TodoError";
+import { EmptyTodos } from "../components/EmptyTodos";
 
 function AppUI() {
     const {
@@ -29,7 +30,7 @@ function AppUI() {
                 {error && <TodoError error={error} />}
                 {loading && <TodoLoading />}
                 {!loading && !searchedTodos.length && (
-                    <p className='text-blue'>¡Crea tu primer TODO!</p>
+                    <EmptyTodos setOpenModal={setOpenModal} />
                 )}
 
                 {searchedTodos.map((todo) => (
