@@ -1,5 +1,12 @@
+:root {
+    --blue-bg: #dce7f8;
+    --blue-light: #bacbe6;
+    --blue-dark: #084298;
+}
+
 body {
-    background-color: rgba(42, 138, 234, 0.175);
+    background-color: var(--blue-bg);
+    /* background-color: #2a8aea2d; */
 }
 
 .checkbox {
@@ -8,13 +15,13 @@ body {
     align-items: center;
     width: 15px;
     height: 15px;
-    border: 1px solid #08429875;
+    border: 1px solid rgba(8, 66, 152, 0.5);
     border-radius: 0.25rem;
 }
 
 .checkbox:hover {
     cursor: pointer;
-    box-shadow: 0 0 4px #084298a7;
+    box-shadow: 0 0 5px rgba(8, 66, 152, 0.5);
 }
 
 .checkbox-icon {
@@ -23,30 +30,30 @@ body {
 }
 
 .checkbox-icon:hover {
-    color: #cfe2ff;
+    color: var(--blue-bg);
 }
 
 .checked {
-    background-color: #084298;
-    border-color: #084298;
+    background-color: var(--blue-dark);
+    border-color: var(--blue-dark);
 }
 
 .checked-icon {
-    color: #bacbe6;
+    color: var(--blue-light);
 }
 
 .bg-blue {
-    border-color: #084298;
-    background-color: #bacbe6;
+    border-color: var(--blue-dark);
+    background-color: rgb(8, 66, 152, 0.25);
 }
 
 .bg-blue:focus {
-    border-color: #084298;
+    border-color: var(--blue-dark);
     background-color: transparent;
 }
 
 .text-blue {
-    color: #084298;
+    color: var(--blue-dark);
 }
 
 .fs-10 {
@@ -58,11 +65,71 @@ body {
 }
 
 .add-todo:focus {
-    color: #084298;
+    color: var(--blue-dark);
     border-color: transparent;
 }
 
 .add-todo:hover {
-    color: rgb(68, 116, 187);
+    color: rgb(8, 66, 152, 0.5);
     border-color: transparent;
+}
+
+.modal-container {
+    display: block;
+    z-index: 1;
+    background-color: #00000099;
+}
+
+.modal-form {
+    background-color: var(--blue-bg);
+    border: 1px solid var(--blue-dark);
+}
+
+.modal-input {
+    border: 1px solid var(--blue-dark);
+    background-color: var(--blue-light);
+    color: var(--blue-dark);
+    min-height: 100px !important;
+    max-height: 40vh;
+}
+
+.modal-input:focus {
+    box-shadow: 0 0 0 0.25rem rgba(8, 66, 152, 0.25);
+    background-color: var(--blue-bg);
+    color: var(--blue-dark);
+}
+
+.modal-input-label {
+    font-size: 5px;
+}
+
+.btn-cancel,
+.btn-cancel:active,
+.btn-cancel:focus {
+    background-color: var(--blue-bg);
+    border-color: var(--blue-dark);
+    color: var(--blue-dark);
+    box-shadow: none;
+}
+
+.btn-add,
+.btn-add:active,
+.btn-add:focus {
+    background-color: var(--blue-dark);
+    border-color: var(--blue-dark);
+    color: var(--blue-bg);
+    box-shadow: none;
+}
+
+.btn-cancel:hover {
+    background-color: var(--blue-light);
+    border-color: var(--blue-light);
+    color: var(--blue-dark);
+    box-shadow: 0 0 5px rgba(8, 66, 152, 0.5);
+}
+
+.btn-add:hover {
+    background-color: rgb(8, 66, 152, 0.4);
+    color: var(--blue-dark);
+    box-shadow: 0 0 5px rgba(8, 66, 152, 0.5);
 }
