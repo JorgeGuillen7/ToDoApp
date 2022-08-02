@@ -10,9 +10,9 @@ function TodoSearch() {
     };
 
     return (
-        <div className='col col-sm-8 col-md-6 px-4 mb-4 m-auto justify-content-center '>
+        <div className='col col-sm-8 col-md-6 col-lg-5 px-4 mb-4 m-auto justify-content-center '>
             <input
-                className='form-control bg-blue'
+                className='form-control search-input'
                 placeholder='Search...'
                 value={search}
                 onChange={onSearchValueChange}

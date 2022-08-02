@@ -21,7 +21,7 @@ function TodoForm() {
 
     return (
         <div className='modal modal-container' id='exampleModal'>
-            <div className='modal-dialog mt-5 text-blue'>
+            <div className='modal-dialog mt-4'>
                 <div className='modal-content modal-form'>
                     <div className='modal-header justify-content-center py-2'>
                         <label
@@ -32,8 +32,8 @@ function TodoForm() {
                         </label>
                     </div>
                     <form onSubmit={onSubmit}>
-                        <div className='modal-body'>
-                            <div class='form-floating'>
+                        <div className='modal-body py-1'>
+                            <div className='form-floating'>
                                 <textarea
                                     className='form-control modal-input'
                                     id='modalInput'
@@ -41,7 +41,7 @@ function TodoForm() {
                                     value={newTodoValue}
                                     onChange={onChange}
                                 ></textarea>
-                                <label for='modalInput modal-input-label'>
+                                <label htmlFor='modalInput modal-input-label'>
                                     What's your TODO?
                                 </label>
                             </div>

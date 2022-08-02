@@ -8,7 +8,9 @@ function CreateTodoButton(props) {
     return (
         <div className='fixed-bottom p-4 pb-3 d-flex justify-content-end'>
             <button
-                className='btn p-0 add-todo text-blue'
+                className={`btn p-0 add-todo main-color-text ${
+                    props.openModal && "add-todo-transition"
+                }`}
                 onClick={onclickButton}
             >
                 <i className='bi bi-plus-circle-fill'></i>

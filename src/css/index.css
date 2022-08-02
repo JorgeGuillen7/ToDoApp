@@ -1,12 +1,24 @@
 :root {
-    --blue-bg: #dce7f8;
-    --blue-light: #bacbe6;
-    --blue-dark: #084298;
+    --bg-color: #242d3c;
+    --bg-light: hsl(217, 25%, 25%);
+    --main-color: #e46e35;
+    --main-color-25: rgb(228, 110, 53, 0.25);
+    --main-color-50: rgb(228, 110, 53, 0.5);
+    --white: rgb(235, 235, 235);
 }
 
 body {
-    background-color: var(--blue-bg);
-    /* background-color: #2a8aea2d; */
+    background-color: var(--bg-color);
+}
+
+.logo {
+    width: 50vw;
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+.logo img {
+    width: 100%;
 }
 
 .checkbox {
@@ -15,13 +27,13 @@ body {
     align-items: center;
     width: 15px;
     height: 15px;
-    border: 1px solid rgba(8, 66, 152, 0.5);
+    border: 1px solid var(--main-color-50);
     border-radius: 0.25rem;
 }
 
 .checkbox:hover {
     cursor: pointer;
-    box-shadow: 0 0 5px rgba(8, 66, 152, 0.5);
+    box-shadow: 0 0 5px var(--main-color-50);
 }
 
 .checkbox-icon {
@@ -30,30 +42,66 @@ body {
 }
 
 .checkbox-icon:hover {
-    color: var(--blue-bg);
+    color: var(--bg-color);
 }
 
 .checked {
-    background-color: var(--blue-dark);
-    border-color: var(--blue-dark);
+    background-color: var(--main-color);
+    border-color: var(--main-color);
 }
 
 .checked-icon {
-    color: var(--blue-light);
+    color: var(--bg-color);
 }
 
-.bg-blue {
-    border-color: var(--blue-dark);
-    background-color: rgb(8, 66, 152, 0.25);
+.search-input {
+    border-color: var(--main-color);
+    background-color: var(--main-color-25);
+    color: var(--main-color);
 }
 
-.bg-blue:focus {
-    border-color: var(--blue-dark);
+.search-input:focus {
+    box-shadow: 0 0 0 0.25rem var(--main-color-25);
+    border-color: var(--main-color);
     background-color: transparent;
+    color: var(--main-color);
 }
 
-.text-blue {
-    color: var(--blue-dark);
+.search-input::placeholder {
+    color: var(--main-color-50);
+}
+
+.todo-item {
+    color: var(--white);
+    background-color: var(--bg-light);
+    margin-bottom: 10px;
+}
+
+.todo-item:hover {
+    background-color: var(--white);
+    color: var(--bg-color);
+}
+
+.todo-item-completed {
+    text-decoration: line-through var(--white);
+}
+
+.todo-item:hover .todo-item-completed {
+    text-decoration: line-through var(--bg-color);
+}
+
+.delete-todo-btn {
+    color: var(--white);
+    background-color: transparent;
+    border: none;
+}
+
+.todo-item:hover .delete-todo-btn {
+    color: var(--bg-color);
+}
+
+.main-color-text {
+    color: var(--main-color);
 }
 
 .fs-10 {
@@ -61,42 +109,63 @@ body {
 }
 
 .add-todo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
     font-size: 35px;
+    transition: transform 0.2s ease-in-out;
 }
 
 .add-todo:focus {
-    color: var(--blue-dark);
+    color: var(--main-color);
     border-color: transparent;
+    line-height: 1;
 }
 
 .add-todo:hover {
-    color: rgb(8, 66, 152, 0.5);
+    color: var(--white);
     border-color: transparent;
+}
+
+.add-todo i::before {
+    line-height: unset;
+}
+
+.add-todo-transition {
+    transform: rotate(135deg);
 }
 
 .modal-container {
     display: block;
     z-index: 1;
     background-color: #00000099;
+    color: var(--white);
 }
 
 .modal-form {
-    background-color: var(--blue-bg);
-    border: 1px solid var(--blue-dark);
+    background-color: var(--bg-color);
+}
+
+.modal-form .modal-header,
+.modal-form .modal-footer {
+    border: none;
+    color: var(--main-color);
 }
 
 .modal-input {
-    border: 1px solid var(--blue-dark);
-    background-color: var(--blue-light);
-    color: var(--blue-dark);
+    border: 1px solid var(--main-color);
+    background-color: var(--bg-light);
+    color: var(--main-color);
     min-height: 100px !important;
     max-height: 40vh;
 }
 
 .modal-input:focus {
-    box-shadow: 0 0 0 0.25rem rgba(8, 66, 152, 0.25);
-    background-color: var(--blue-bg);
-    color: var(--blue-dark);
+    box-shadow: 0 0 0 0.25rem var(--main-color-25);
+    background-color: var(--bg-color);
+    color: var(--main-color);
+    border-color: var(--main-color);
 }
 
 .modal-input-label {
@@ -106,32 +175,33 @@ body {
 .btn-cancel,
 .btn-cancel:active,
 .btn-cancel:focus {
-    background-color: var(--blue-bg);
-    border-color: var(--blue-dark);
-    color: var(--blue-dark);
+    background-color: var(--bg-color);
+    border-color: var(--main-color);
+    color: var(--main-color);
     box-shadow: none;
 }
 
 .btn-add,
 .btn-add:active,
 .btn-add:focus {
-    background-color: var(--blue-dark);
-    border-color: var(--blue-dark);
-    color: var(--blue-bg);
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+    color: var(--bg-color);
     box-shadow: none;
 }
 
 .btn-cancel:hover {
-    background-color: var(--blue-light);
-    border-color: var(--blue-light);
-    color: var(--blue-dark);
-    box-shadow: 0 0 5px rgba(8, 66, 152, 0.5);
+    background-color: var(--bg-light);
+    border-color: var(--main-color);
+    color: var(--white);
+    box-shadow: 0 0 5px var(--main-color-50);
 }
 
 .btn-add:hover {
-    background-color: rgb(8, 66, 152, 0.4);
-    color: var(--blue-dark);
-    box-shadow: 0 0 5px rgba(8, 66, 152, 0.5);
+    background-color: var(--main-color-50);
+    border-color: var(--main-color);
+    color: var(--white);
+    box-shadow: 0 0 5px var(--main-color-50);
 }
 
 .loading-container {
@@ -146,7 +216,7 @@ body {
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background-color: var(--blue-dark);
+    background-color: var(--main-color);
     animation: loading-dot 2s ease-in-out infinite;
 }
 
@@ -166,11 +236,12 @@ body {
     max-width: 800px;
     padding: 10px;
     margin: 0 auto;
-    color: var(--blue-dark);
+    color: var(--main-color-50);
 }
 
 .msg-img {
     font-size: 5rem;
+    color: var(--main-color-50);
 }
 
 .msg-container span:hover {
